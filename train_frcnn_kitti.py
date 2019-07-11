@@ -30,10 +30,11 @@ def train_kitti():
     cfg.rot_90 = True
     cfg.num_rois = 32
     cfg.base_net_weights = os.path.join('./model/', nn.get_weight_path())
+    cfg.anchor_box_scales=[64,128,256]
 
     # TODO: the only file should to be change for other data to train
     cfg.model_path = './model/kitti_frcnn_last.hdf5'
-    cfg.simple_label_file = 'kitti_simple_label.txt'
+    cfg.simple_label_file = '/home/iterator/ApplePests62/trainval.txt'
 
     all_images, classes_count, class_mapping = get_data(cfg.simple_label_file)
 
